@@ -1,0 +1,13 @@
+Relatório 03 - INF1018 - SOFTWARE BASICO;
+
+Relatório passo a passo;
+1) 
+Alterei o codigo para manipular os bits da variavel x para criar y e z, em que y recebe o byte mensos significativo de x e z recebe os tres menos significativos de x como estão, e define o byte mais significativo (os primeiros 8 bits) como 0xFF. Neste caso, z receberá o valor 0xFF654321.
+
+2) Fiz a função percorrendo o numero bit a bit adicionando +1 ao contador a cada bit == 1 e no final apenas retornei o contador&1, onde 0 = par e 1 = impar 
+
+3)
+a) criei a função switch_byte que troca as duas metades do byte, usando 3 mascaras para sobrescrever, porem depois percebi que podia simplificar a função inteira, porem deixei as duas para comparação.
+
+b) Criei a função rotate_left que realiza a rotação circular a esquerda em n bits em um byte da maneira simplificada tambem.
+
