@@ -1,0 +1,21 @@
+Relatório 04 - INF1018 - SOFTWARE BASICO;
+
+Relatório passo a passo;
+1) Fiz o exercicio sem problemas.
+
+2) Os dois valores são armazenados na memória como 0x8003, mas a representação na memória é invertida para 03 80 devido à ordem de bytes, já a função dump imprime os valores armazenados byte a byte em hexadecimal.
+
+3) A função xbyte extrai um byte específico de um número de 32 bits e o converte para um inteiro com sinal. Ela funciona deslocando o byte desejado para a posição menos significativa, isolando os 8 bits com uma máscara, e depois fazendo extensão de sinal se o bit mais significativo estiver ligado (indicando número negativo). O resultado é que bytes negativos (com bit 7 = 1) são convertidos corretamente para números negativos de 32 bits, enquanto bytes positivos mantêm seu valor original.
+
+4) Programa 1: Interpreta 0xffffffff como um número negativo -1 devido ao tipo int. A comparação resulta em sim.
+Programa 2: Interpreta 0xffffffff como um número positivo grande (4294967295) devido ao tipo unsigned int. A comparação resulta em não.
+A principal diferença nos resultados se dá pela interpretação do valor binário baseado no tipo da variável (int vs. unsigned int).
+
+
+x = 0xffffffff: Para o tipo int, esse valor é interpretado como -1 devido ao complemento a dois.
+y = 2: É um valor positivo armazenado como unsigned int.
+Na comparação (x < y), como x é negativo (-1) e y é positivo (2), o resultado será "sim".
+
+
+5) Ele converte o valor de signed char, que ocupa 8 bits, para um unsigned int de 32 bits. O valor de sc é copiado para os 8 bits menos significativos de ui, e os outros 24 bits são preenchidos com 0.
+Para sc = -1, o valor binário de ui será 00000000 00000000 00000000 11111111, que corresponde a 255 em decimal.
