@@ -1,0 +1,8 @@
+1. Consegui entender a relação entre ambos os codigos, primeiro inicializando
+as variaveis i,p e sum, e comparando i com 4 a cada loop e depois exibindo o conteudo da variavel apontada por p ponteiro e add +4 bytes para ir para o prox elemento do vetor
+
+2. Fiz o somatorio de num r13d somando com o ponteiro r12 e exibi o resultado apenas no final antes da finalização no inicio do L2
+
+3. Eu copiei o conteudo do vetor para um registrador e comparei ele and $0 para verificar se era par 
+
+4. Alterei o nums para byte, e apenas tive que mudar a soma do %r12 para 1 byte ao inves de 4 e considerar a troca de char para int no print
