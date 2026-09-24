@@ -1,0 +1,74 @@
+Relatório 05 - INF1018 - SOFTWARE BASICO;
+
+Relatório passo a passo;
+1) int b[2]; possui um vetor de tamanho dois correspondente a 8 bytes, 4 bytes para cada indice do vetor,
+ja short a[2][3]; possui 12 bytes por possuir 2*3 elementos.
+A função exibe o endereço de memoria de cada byte que foi alocado pela variavel, junto com seus valores em hexa decimal 	
+
+2) As variaveis seguem o padrao normal, com a variavel a (int) começando no endereço de memoria 12
+ja variavel b tambem sendo short começa no endereço 0, porem para a variavel c (int) ela faz um dump de 2 memorias pois os endereços 62 e 63 nao são multiplos de 4
+
+
+3)
+struct X1:
+
+    Contém: char, int, char.
+    Resultado na memória:
+        char c1 ocupa 1 byte.
+        Padding (3 bytes) para alinhar o próximo int.
+        int i ocupa 4 bytes.
+        char c2 ocupa 1 byte.
+        Padding (3 bytes) para alinhar a estrutura no final.
+    Tamanho total: Geralmente 12 bytes.
+
+struct X2:
+
+    Contém: long, char.
+    Resultado na memória:
+        long ocupa 8 bytes.
+        char ocupa 1 byte.
+        Padding (7 bytes) para alinhar a estrutura.
+    Tamanho total: Geralmente 16 bytes.
+
+struct X3:
+
+    Contém: int, char, char.
+    Resultado na memória:
+        int i ocupa 4 bytes.
+        char c1 ocupa 1 byte.
+        char c2 ocupa 1 byte.
+        Padding (2 bytes) para alinhar a estrutura.
+    Tamanho total: Geralmente 8 bytes.
+
+struct X4:
+
+    Contém: struct X2 (16 bytes) e char.
+    Resultado na memória:
+        struct X2 ocupa 16 bytes.
+        char c ocupa 1 byte.
+        Padding (7 bytes) para alinhar a estrutura.
+    Tamanho total: Geralmente 24 bytes.
+
+struct X5:
+
+    Contém: char, char, char.
+    Resultado na memória:
+        Cada char ocupa 1 byte.
+    Tamanho total: 3 bytes (sem padding necessário).
+
+struct X6:
+
+    Contém: short, int, char[3], short.
+    Resultado na memória:
+        short s1 ocupa 2 bytes.
+        Padding (2 bytes) para alinhar o próximo int.
+        int i ocupa 4 bytes.
+        char[3] ocupa 3 bytes.
+        Padding (1 byte) para alinhar o próximo short.
+        short s2 ocupa 2 bytes.
+    Tamanho total: Geralmente 12 bytes.
+
+Uniões U1 e U2:
+
+    union U1: Pode conter um int ou char[5]. O tamanho é o maior entre os dois, ou seja, 5 bytes.
+    union U2: Pode conter um short ou char[5]. O tamanho é o maior entre os dois, ou seja, 5 bytes.
